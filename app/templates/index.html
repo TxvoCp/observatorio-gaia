@@ -1,0 +1,49 @@
+<!-- app/templates/index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Observatorio de Amazonía</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>🌳 Observatorio de Deforestación en la Amazonía</h1>
+
+    <button onclick="descargarImagen()">📥 Descargar Imagen Satelital</button>
+    <p id="descarga-status"></p>
+
+    <button onclick="detectarArboles()">🌲 Ejecutar Detección de Árboles</button>
+    <p id="deteccion-status"></p>
+
+    <h2>🗺️ Resultado:</h2>
+    <img id="imagen-resultado" src="/static/mapa/mapa.html" alt="Resultado" style="width:100%; display:none;">
+
+    <script>
+        function descargarImagen() {
+            fetch('/descargar_imagen')
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('descarga-status').innerText = data;
+                });
+        }
+
+        function detectarArboles() {
+            fetch('/detectar_arbol', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ imagen_path: 'app/data/sentinel_image.tiff' }) 
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.resultado_path) {
+                    document.getElementById('deteccion-status').innerText = '✅ Detección completada.';
+                    document.getElementById('imagen-resultado').src = '/' + data.resultado_path.replace("app/", "static/");
+                    document.getElementById('imagen-resultado').style.display = 'block';
+                } else {
+                    document.getElementById('deteccion-status').innerText = '❌ Error: ' + data.error;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

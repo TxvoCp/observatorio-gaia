@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "detecciones_detectron2_2025-06-15_05-43-27",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "properties": { "confidence": 0.9720433950424194, "class_id": 0, "detection_model": "detectron2", "detection_date": "2025-06-15T05:43:27.990270" } }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -51.551228846371053, -6.366214723213767 ], [ -49.671868467416083, -6.364801265571463 ], [ -49.666367404179866, -8.226402770260988 ], [ -51.553512693682443, -8.228234527121113 ], [ -51.551228846371053, -6.366214723213767 ] ] ] } }
+]
+}

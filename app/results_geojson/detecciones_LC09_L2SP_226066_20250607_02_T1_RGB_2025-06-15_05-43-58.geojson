@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "detecciones_LC09_L2SP_226066_20250607_02_T1_RGB_2025-06-15_05-43-58",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "confidence": 0.75903970003128052, "class_id": 0, "class_name": "Deforestation", "detection_date": "2025-06-15T05:43:58.305406", "image_size": "7661x7781" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -55.108781429525479, -7.965267378771903 ], [ -54.439112803760374, -7.961672087053849 ], [ -54.428980335208699, -9.448020418010662 ], [ -55.101294027551198, -9.452297818534635 ], [ -55.108781429525479, -7.965267378771903 ] ] ] } }
+]
+}

@@ -1,0 +1,11 @@
+flask
+geopandas
+rasterio
+folium
+pystac-client
+planetary-computer
+shapely
+Pillow 
+numpy
+matplotlib
+ultralytics

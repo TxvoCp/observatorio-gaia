@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "detecciones_detectron2_2025-06-15_05-43-53",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "properties": { "confidence": 0.9354426264762878, "class_id": 0, "detection_model": "detectron2", "detection_date": "2025-06-15T05:43:53.094700" } }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -54.384418627691552, -4.775419107809937 ], [ -52.532476167235039, -4.782064923230433 ], [ -52.537993044022144, -6.821257254332093 ], [ -54.396579809627866, -6.811755537303794 ], [ -54.384418627691552, -4.775419107809937 ] ] ] } },
+{ "type": "Feature", "properties": { "properties": { "confidence": 0.5727806687355042, "class_id": 0, "detection_model": "detectron2", "detection_date": "2025-06-15T05:43:53.094700" } }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -53.934891416736583, -5.463860306078646 ], [ -52.608941377013721, -5.468882315293554 ], [ -52.612887984296464, -6.784852745306023 ], [ -53.942081636861239, -6.778612451801669 ], [ -53.934891416736583, -5.463860306078646 ] ] ] } }
+]
+}

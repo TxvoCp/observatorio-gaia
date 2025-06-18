@@ -1,0 +1,4 @@
+app/data/
+*.tif
+*.jpg
+*.npz
