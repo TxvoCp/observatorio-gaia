@@ -1,9 +1,23 @@
+# Carpetas de datos y resultados
 app/data/
+app/results/predict/
+
+# Entorno virtual de Python
+.venv/
+venv/
+
+# Archivos binarios pesados (bibliotecas, modelos)
+*.dll
+*.lib
+*.pth
+
+# Imágenes y datos de entrenamiento
 *.tif
 *.jpg
 <<<<<<< HEAD
 *.npz
 
+# Archivos específicos (opcional, para claridad o control más estricto)
 torch_cuda.dll
 dnnl.lib
 cudnn_engines_precompiled64_9.dll
