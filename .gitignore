@@ -2,3 +2,16 @@ app/data/
 *.tif
 *.jpg
 *.npz
+
+torch_cuda.dll
+dnnl.lib
+cudnn_engines_precompiled64_9.dll
+cublasLt64_11.dll
+detectron2.pth
+cusolver64_11.dll
+cufft64_10.dll
+cusparse64_11.dll
+torch_cpu.dll
+cudnn_adv64_9.dll
+cusolverMg64_11.dll
+cudnn_ops64_9.dll
