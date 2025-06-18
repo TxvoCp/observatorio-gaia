@@ -1,6 +1,7 @@
 app/data/
 *.tif
 *.jpg
+<<<<<<< HEAD
 *.npz
 
 torch_cuda.dll
@@ -15,3 +16,6 @@ torch_cpu.dll
 cudnn_adv64_9.dll
 cusolverMg64_11.dll
 cudnn_ops64_9.dll
+=======
+*.npz
+>>>>>>> ec787adf2 (Agregada carpeta detectron2 sin su repositorio embebido)
