@@ -9,3 +9,4 @@ Pillow
 numpy
 matplotlib
 ultralytics
+gunicorn
