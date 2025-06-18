@@ -10,7 +10,7 @@ import rasterio
 from rasterio.transform import xy
 import geopandas as gpd
 from shapely.geometry import box, Polygon
-from app.detection_detectron import Detectron2Detector  
+#from app.detection_detectron import Detectron2Detector  
 from ultralytics import YOLO
 
 warnings.filterwarnings("ignore", category=UserWarning, module="rasterio")
@@ -153,6 +153,7 @@ def detect_and_geolocate():
     detector = DeforestacionDetector()
     return detector.detect_from_metadata()
 
+"""
 def detectar_con_ambos_modelos(imagen_path):
         yolov_detector = DeforestacionDetector()
         detectron2_detector = Detectron2Detector()
@@ -179,3 +180,4 @@ def detectar_con_ambos_modelos(imagen_path):
             return output_path
 
         return yolov_geojson or detectron2_geojson
+"""
