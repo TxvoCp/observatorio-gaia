@@ -3,7 +3,7 @@ import json
 import folium
 import geopandas as gpd
 from datetime import date
-from osgeo import gdal
+#from osgeo import gdal
 import rasterio
 from rasterio.transform import Affine
 import numpy as np
@@ -19,13 +19,9 @@ def image_to_geo_coords(img_coords, transform):
 
 def generar_geojson_detecciones(detecciones, imagen_path, output_path):
     try:
-        try:
-            with rasterio.open(imagen_path) as src:
-                transform = src.transform
-        except:
-            ds = gdal.Open(imagen_path)
-            transform = ds.GetGeoTransform()
-            ds = None
+        with rasterio.open(imagen_path) as src:
+            transform = src.transform
+
 
         features = []
         for det in detecciones:
