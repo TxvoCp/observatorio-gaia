@@ -2,7 +2,7 @@ from flask import Flask, jsonify, render_template, request, redirect, url_for
 from app.download_landsat import descargar_imagenes_bioma_amazonico
 from app.detection import DeforestacionDetector, detect_and_geolocate
 from app.geojson_utils import mostrar_mapa_amazonia_y_detecciones_unico_archivo
-from app.detection import detectar_con_ambos_modelos
+#from app.detection import detectar_con_ambos_modelos
 import os
 import sys
 import shutil
@@ -32,6 +32,7 @@ def mostrar_mapa():
         return redirect(url_for('static', filename='mapa/mapa.html'))
     return "❌ Error al generar el mapa", 500
 
+"""
 @app.route('/detectar_arbol', methods=['POST'])
 def detectar_arbol():
     data = request.get_json()
@@ -51,7 +52,7 @@ def detectar_arbol():
         return jsonify({"error": "No se detectaron áreas de deforestación"}), 404
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-    
+"""
 @app.route('/proceso_completo')
 def proceso():
     descargar_imagenes_bioma_amazonico()
@@ -70,8 +71,8 @@ def regenerar_mapa():
     return "❌ Error al regenerar mapa"
 
 
-def detectar_arboles_en_imagen(imagen_path):
-    return detectar_con_ambos_modelos(imagen_path)
+#def detectar_arboles_en_imagen(imagen_path):
+#   return detectar_con_ambos_modelos(imagen_path)
 
 
 if __name__ == '__main__':
