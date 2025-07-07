@@ -2,7 +2,7 @@ from flask import Flask, jsonify, render_template, request, redirect, url_for
 from app.download_landsat import descargar_imagenes_bioma_amazonico
 from app.detection import DeforestacionDetector, detect_and_geolocate
 from app.geojson_utils import mostrar_mapa_amazonia_y_detecciones_unico_archivo
-from app.detection import detectar_con_ambos_modelos
+#from app.detection import detectar_con_ambos_modelos
 import os
 import sys
 import shutil
