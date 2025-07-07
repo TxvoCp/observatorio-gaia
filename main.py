@@ -2,7 +2,7 @@ from flask import Flask, jsonify, render_template, request, redirect, url_for
 from app.download_landsat import descargar_imagenes_bioma_amazonico
 from app.detection import DeforestacionDetector, detect_and_geolocate
 from app.geojson_utils import mostrar_mapa_amazonia_y_detecciones_unico_archivo
-#from app.detection import detectar_con_ambos_modelos
+from app.detection import detectar_con_ambos_modelos
 import os
 import sys
 import shutil
@@ -19,7 +19,8 @@ app = Flask(__name__,
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return redirect(url_for('static', filename='mapa/mapa.html'))
+
 
 @app.route('/descargar_imagen')
 def descargar():
@@ -69,6 +70,22 @@ def regenerar_mapa():
     if mostrar_mapa_amazonia_y_detecciones_unico_archivo():
         return "✅ Mapa regenerado"
     return "❌ Error al regenerar mapa"
+
+@app.route('/api/geojsons')
+def listar_geojsons():
+    geojson_dir = os.path.join("app", "results_geojson")
+    geojsons = []
+    
+    for filename in os.listdir(geojson_dir):
+        if filename.endswith(".geojson"):
+            path = os.path.join(geojson_dir, filename)
+            with open(path, "r", encoding="utf-8") as f:
+                geojsons.append({
+                    "filename": filename,
+                    "data": f.read()
+                })
+
+    return jsonify(geojsons)
 
 
 #def detectar_arboles_en_imagen(imagen_path):
